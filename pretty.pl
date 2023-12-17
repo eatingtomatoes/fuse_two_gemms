@@ -21,7 +21,7 @@ sub format_layout {
         =~ s/(?<shape>cute::tuple$type_args),\s*?(?<stride>cute::tuple$type_args)/$+{shape}:$+{stride}/gr
 
         # 把 `tuple<...>` 简写为 `<...>`
-        =~ s/cute::tuple$type_args/$1/ger
+        =~ s/cute::tuple//gr
 
         # 把 `C<数字>` 简写为 `数字`
         =~ s/C<(\d+)>/$1/gr
